@@ -1,2 +1,3 @@
-# Mike Mambwe and Vanessa Nakayenge
-## correct this is i spelt your name wrong.
+# Mike Mambwe and  Vanessa Nakayange
+## This is the second Dual project : 0x16-simple_shell
+
