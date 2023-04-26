@@ -18,8 +18,9 @@
 
 /* Points to an array of pointers to strings called the "environment" */
 extern char **environ;
-
-
+Authors 
+Mike Mambwe and               Vanessa Nakayange
+^^^^^^^^^^^ Software Engineer ^^^^^^^^^^^^^^^^^
 /**
  * struct data - struct that contains all relevant data on runtime
  * @argument_vector: argument vector
