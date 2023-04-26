@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * aux_help_env - Help information for the builtin env
- * Return: no return
+ * aux_help_env - Help information for the builtin env(environment).
+ * Return: no return from the function.
  */
 void aux_help_env(void)
 {
@@ -14,7 +14,7 @@ void aux_help_env(void)
 
 }
 /**
- * aux_help_setenv - Help information for the builtin setenv
+ * aux_help_setenv - Help information for the builtin setenv(environment)
  * Return: no return
  */
 void aux_help_setenv(void)
