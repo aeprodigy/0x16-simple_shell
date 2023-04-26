@@ -4,12 +4,12 @@
 /**
  * strcat_cd - function that concatenates the message for cd error_output
  *
- * @datashell: data relevant (directory)
+ * @datashell: data relevant (directory) in the system.
  * @print_msg: message to print
  * @error_output: output message
  * @ver_str: counter lines
  * Return: error_output message
- * mike mambwe and vanessa nakayange.
+ * 
  */
 char *strcat_cd(data_shell *datashell, char *print_msg, char *error_output, char *ver_str)
 {
@@ -42,8 +42,8 @@ char *strcat_cd(data_shell *datashell, char *print_msg, char *error_output, char
 
 /**
  * error_get_cd - error_output message for cd command in get_cd
- * @datashell: data relevant (directory)
- * Return: Error message
+ * @datashell: data relevant
+ * Return: Error message from the file
  */
 char *error_get_cd(data_shell *datashell)
 {
@@ -82,7 +82,7 @@ char *error_get_cd(data_shell *datashell)
 /**
  * error_not_found - generic error_output message for command not found
  * @datashell: data relevant (counter, arguments)
- * Return: Error message
+ * Return: Error message from the system
  */
 char *error_not_found(data_shell *datashell)
 {
@@ -115,7 +115,7 @@ char *error_not_found(data_shell *datashell)
  * error_exit_shell - generic error_output message for exit in get_exit
  * @datashell: data relevant (counter, arguments)
  *
- * Return: Error message
+ * Return: Error message the system
  */
 char *error_exit_shell(data_shell *datashell)
 {
