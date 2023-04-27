@@ -66,9 +66,9 @@ void print_number_in(int n)
 }
 /**
  * check_delim - Checks If A Character Match Any Char *
- * @c: Character To Check
- * @str: String To Check
- * Return: 1 Succes, 0 Failed
+ * @c: Character To Check through
+ * @str: String To Check through
+ * Return: return 1 if Succes, return 0 if Failed
  */
 unsigned int check_delim(char c, const char *str)
 {
@@ -84,9 +84,9 @@ unsigned int check_delim(char c, const char *str)
 
 /**
  * _strtok - Token A String Into Token (strtrok)
- * @str: String
- * @delim: Delimiter
- * Return: Pointer To The Next Token Or NULL
+ * @str: String variable.
+ * @delim: Delimiter of values
+ * Return: Pointer To The Next NULL Or Token
  */
 char *_strtok(char *str, const char *delim)
 {
