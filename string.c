@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * _strncpy - copie a string
+ * _strncpy - copy of a string
  * @dest:char
- *  @src:char
+ *  @src:char character
  * @n:int
- * Return:char
+ * Return:char charcter
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -27,7 +27,7 @@ i = 0;
 /**
  * _strlen - lenght of string
  * @s:char
- * Return:int
+ * Return:int integer
  */
 
 int _strlen(char *s)
@@ -42,7 +42,7 @@ return (i);
 }
 
 /**
- * _atoi - convert to a int
+ * _atoi - convert to an int
  * @s:string
  * Return:int
  */
@@ -86,8 +86,8 @@ return;
 
 /**
  * _strcmp - Compare Two String
- * @s1:String 1
- * @s2:String 2
+ * @s1:String 1 one
+ * @s2:String 2 two
  * Return: 0 If Identical Otherwise How Much Diffrent
  */
 int _strcmp(char *s1, char *s2)
