@@ -13,10 +13,10 @@ int _putchar(char c)
 }
 /**
  * print_error - Display Error Based on Command and How Many Time Shell Looped
- * @input:User Input
- * @counter:Simple Shell Count Loop
- * @argv:Program Name
- * Return: Void
+ * @input:User Input to the prog
+ * @counter:Simple Shell Counting Loop values.
+ * @argv:Program Name value.
+ * Return: Void (no return of values).
  */
 void print_error(char *input, int counter, char **argv)
 {
