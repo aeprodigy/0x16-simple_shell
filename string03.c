@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * _isalpha - Check if Alphabtic
+ * _isalpha - Check for Alphabtic characters
  *@c: Character
- * Return: 1 If True 0 If Not
+ * Return: 1 If True 0 If false
  */
 int _isalpha(int c)
 {
@@ -18,7 +18,7 @@ return (0);
 /**
  * _itoa - Convert Integer To Char
  * @n: Int To Convert
- * Return: Char Pointer
+ * Return: Char Pointer(character pointer).
  */
 char *_itoa(unsigned int n)
 {
@@ -43,8 +43,8 @@ char *_itoa(unsigned int n)
 }
 /**
  *  array_rev - Reverse Array
- * @arr:Array To Reverse
- * @len:Length Of Array
+ * @arr:Array To Reverse backwards
+ * @len:Length Of the Array
  * Return: Void(Reverse Array)
  */
 void array_rev(char *arr, int len)
@@ -62,7 +62,7 @@ void array_rev(char *arr, int len)
 /**
  * intlen - Determine Length Of Int
  * @num: Given Int
- * Return: Length Of Int
+ * Return: Length Of Int (integer).
  */
 int intlen(int num)
 {
@@ -78,7 +78,7 @@ int intlen(int num)
 /**
  *  _prerror - Print Custome Error
  * @argv:Program Name
- * @c:Error Count
+ * @c:Error Count (count for errors).
  * @cmd:Command
  * Return: Void
  */
