@@ -3,9 +3,9 @@
 /**
  **_realloc -  Reallocates A Memory Block Using Malloc And Free
  *@ptr: Pointer
- *@old_size: Previous Size Of The Pointer
- *@new_size: New Size Of The Pointer
- *Return: Void Pointer Rellocated Memory
+ *@old_size: Previous Size Of The Pointer variable
+ *@new_size: New Size Of The Pointer in the file
+ *Return: Void Pointer Rellocated Memory point.
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
