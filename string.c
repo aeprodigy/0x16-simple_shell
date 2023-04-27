@@ -2,8 +2,8 @@
 /**
  * _strncpy - copy of a string
  * @dest:char
- *  @src:char character
- * @n:int
+ * @src:char character
+ * @n:int integer
  * Return:char charcter
  */
 char *_strncpy(char *dest, char *src, int n)
@@ -44,7 +44,7 @@ return (i);
 /**
  * _atoi - convert to an int
  * @s:string
- * Return:int
+ * Return:int integer
  */
 int _atoi(char *s)
 {
@@ -68,7 +68,7 @@ int i, j, n, x;
 }
 /**
  * _puts - print a string
- * @str:pointer char
+ * @str:pointer char character
  * return:void
  */
 void _puts(char *str)
@@ -86,8 +86,8 @@ return;
 
 /**
  * _strcmp - Compare Two String
- * @s1:String 1 one
- * @s2:String 2 two
+ * @s1:String 1 (one)
+ * @s2:String 2 (two)
  * Return: 0 If Identical Otherwise How Much Diffrent
  */
 int _strcmp(char *s1, char *s2)
