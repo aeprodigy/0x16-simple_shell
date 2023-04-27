@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
  * dis_env - Display Enviroment Variable
- * @cmd:Parsed Command
- * @er:Statue of Last command Excuted
- * Return:Always 0
+ * @cmd:Parsed Commands
+ * @er:Status of Last command Excuted
+ * Return:Always return 0
  */
 int dis_env(__attribute__((unused)) char **cmd, __attribute__((unused)) int er)
 {
@@ -20,9 +20,9 @@ size_t i;
 }
 /**
  * display_help - Displaying Help For Builtin
- * @cmd:Parsed Command
- * @er: Statue Of Last Command Excuted
- * Return: 0 Succes -1 Fail
+ * @cmd:Parsed Commands
+ * @er: Statue Of Last Commands Excuted
+ * Return:return 0 if Succes, or return -1 if Fail
  */
 int display_help(char **cmd, __attribute__((unused))int er)
 {
@@ -49,8 +49,8 @@ int display_help(char **cmd, __attribute__((unused))int er)
 }
 /**
  * echo_bul - Excute Echo Cases
- * @st:Statue Of Last Command Excuted
- * @cmd: Parsed Command
+ * @st:Status Of Last Command Excuted
+ * @cmd: Parsed Commands
  * Return: Always 0 Or Excute Normal Echo
  */
 int echo_bul(char **cmd, int st)
@@ -87,7 +87,7 @@ int echo_bul(char **cmd, int st)
 /**
  * history_dis - Display History Of User Input Simple Shell
  * @c:Parsed Command
- * @s:Statue Of Last Excute
+ * @s:Status Of Last Excuted command
  * Return: 0 Succes -1 Fail
  */
 int history_dis(__attribute__((unused))char **c, __attribute__((unused))int s)
