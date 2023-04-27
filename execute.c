@@ -2,8 +2,8 @@
 
 /**
  * handle_builtin - Handle Builtin Command
- * @cmd: Parsed Command
- * @er:statue of last Excute
+ * @cmd: Parsed Commands
+ * @er:status of last Excuted
  * Return: -1 Fail 0 Succes (Return :Excute Builtin)
  */
 
