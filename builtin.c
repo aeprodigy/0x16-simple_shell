@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
  * exit_bul - Exit Statue Shell
- * @cmd: Parsed Command
- * @input: User Input
- * @argv:Program Name
- * @c:Excute Count
- * Return: Void (Exit Statue)
+ * @cmd: Parsed Commands
+ * @input: User's Input
+ * @argv: Name of Program
+ * @c:Excute Counter
+ * Return: Void (Exit Status) no return function
  */
 void  exit_bul(char **cmd, char *input, char **argv, int c)
 {
@@ -37,8 +37,8 @@ void  exit_bul(char **cmd, char *input, char **argv, int c)
 
 /**
  * change_dir - Change Dirctorie
- * @cmd: Parsed Command
- * @er: Statue Last Command Excuted
+ * @cmd: Parsed Commands
+ * @er: Status Last Command Excuted
  * Return: 0 Succes 1 Failed (For Old Pwd Always 0 Case No Old PWD)
  */
 int change_dir(char **cmd, __attribute__((unused))int er)
