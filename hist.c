@@ -1,10 +1,10 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * get_history_file - gets the history file
- * @info: parameter struct
+ * get_history_file - get the path to the shell's history file
+ * @info: a pointer to the info_t struct
  *
- * Return: allocated string containg history file
+ * Return: a pointer to the path string, or NULL on error
  */
 
 char *get_history_file(info_t *info)
@@ -25,11 +25,13 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - creates a file, or appends to an existing file
- * @info: the parameter struct
+ * write_history - write the contents of the history buffer to a file
  *
- * Return: 1 on success, else -1
+ * @info: a pointer to the struct containing information about the shell
+ *
+ * Return: 0 on success, or -1 if an error occurred
  */
+
 int write_history(info_t *info)
 {
 	ssize_t fd;
@@ -54,11 +56,13 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - reads history from file
- * @info: the parameter struct
+ * read_history - Reads command history from file
  *
- * Return: histcount on success, 0 otherwise
+ * @info: A pointer to an info_t struct containing information about the shell
+ *
+ * Return: 0 on success, -1 on failure
  */
+
 int read_history(info_t *info)
 {
 	int i, last = 0, linecount = 0;
@@ -103,41 +107,54 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - adds entry to a history linked list
- * @info: Structure containing potential arguments. Used to maintain
- * @buf: buffer
- * @linecount: the history linecount, histcount
+ * build_history_list - Builds a linked list of command history from the given
+ *                      buffer.
  *
- * Return: Always 0
+ * @info: Pointer to a struct containing information about the shell
+ * environment.
+ * @buf: Pointer to a buffer containing the command history.
+ * @linecount: The number of lines in the command history buffer.
+ *
+ * Return: 0 on success, or -1 on failure.
  */
+
 int build_history_list(info_t *info, char *buf, int linecount)
 {
 	list_t *node = NULL;
+	size_t i;
 
 	if (info->history)
-		node = info->history;
-	add_node_end(&node, buf, linecount);
+	node = info->history;
+
+	/* Add each character in `buf` to a new node in the history list */
+	for (i = 0; i < strlen(buf); i++)
+	{
+	add_node_end(&node, &buf[i], linecount);
+	}
 
 	if (!info->history)
-		info->history = node;
+	info->history = node;
+
 	return (0);
 }
 
 /**
- * renumber_history - renumbers the history linked list after changes
- * @info: Structure containing potential arguments. Used to maintain
+ * renumber_history - Renumber the history list after removing duplicates.
+ * @info: Pointer to a struct containing information about the shell.
  *
- * Return: the new histcount
+ * Return: 0 on success, or -1 on error.
  */
+
 int renumber_history(info_t *info)
 {
 	list_t *node = info->history;
-	int i = 0;
+	int i;
 
-	while (node)
+	for (i = 0; node; i++)
 	{
-		node->num = i++;
-		node = node->next;
+	node->num = i;
+	node = node->next;
 	}
+
 	return (info->histcount = i);
 }

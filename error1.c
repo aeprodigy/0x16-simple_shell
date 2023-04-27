@@ -1,11 +1,13 @@
-#include "shell.h"
+#include "main.h"
 
 /**
- * _erratoi - converts a string to an integer
- * @s: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
- *       -1 on error
+ * _erratoi - Converts a string to an integer
+ *
+ * @s: Pointer to the string to convert
+ *
+ * Return: The integer value of the string
  */
+
 int _erratoi(char *s)
 {
 	int i = 0;
@@ -29,12 +31,13 @@ int _erratoi(char *s)
 }
 
 /**
- * print_error - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1 on error
+ * print_error - Prints an error message.
+ * @info: Pointer to the info_t struct.
+ * @estr: String containing the error message to be printed.
+ *
+ * Return: void.
  */
+
 void print_error(info_t *info, char *estr)
 {
 	_eputs(info->fname);
@@ -47,12 +50,13 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function prints a decimal (integer) number (base 10)
- * @input: the input
- * @fd: the filedescriptor to write to
+ * print_d - prints a decimal integer to a file descriptor
+ * @input: the integer to be printed
+ * @fd: the file descriptor to write to
  *
- * Return: number of characters printed
+ * Return: the number of characters printed
  */
+
 int print_d(int input, int fd)
 {
 	int (*__putchar)(char) = _putchar;
@@ -86,13 +90,15 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number - converter function, a clone of itoa
- * @num: number
- * @base: base
- * @flags: argument flags
+ * convert_number - Converts a long integer to a string in the specified base.
+ * @num: The number to convert.
+ * @base: The base to convert the number to (must be between 2 and 36).
+ * @flags: Flags to modify the output (currently unused).
  *
- * Return: string
+ * Return: A pointer to a string containing the converted number, or NULL
+ *         if an error occurred.
  */
+
 char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
@@ -107,7 +113,8 @@ char *convert_number(long int num, int base, int flags)
 		sign = '-';
 
 	}
-	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
+	array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" :
+	       "0123456789ABCDEF";
 	ptr = &buffer[49];
 	*ptr = '\0';
 
@@ -122,11 +129,18 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - function replaces first instance of '#' with '\0'
- * @buf: address of the string to modify
+ * remove_comments - removes comments from a given string
  *
- * Return: Always 0;
+ * @buf: pointer to the string to remove comments from
+ *
+ * This function removes all comments from a given string by replacing
+ * any occurrences of the substring "//" with a null character. This
+ * effectively "deletes" any text from the point of the comment until
+ * the end of the string.
+ *
+ * Return: void
  */
+
 void remove_comments(char *buf)
 {
 	int i;
