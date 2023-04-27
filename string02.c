@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
  * _strcpy - Copie Source To Destination Char
- * @dest:Destination
- * @src:Source
- * Return: Copie Of Char *
+ * @dest:Destination dest value.
+ * @src:Source src value.
+ * Return: Copy Of Char * pointer
  */
 char *_strcpy(char *dest, char *src)
 {
@@ -19,10 +19,10 @@ dest[i] = '\0';
 return (dest);
 }
 /**
- * _strcat - Concat Two String
- * @dest:First String
- * @src:Second String
- * Return:First String + Second String Char *
+ * _strcat - Concatinate Two String
+ * @dest:First String (string one)
+ * @src:Second String (string two)
+ * Return:First String + Second String Char * pointer value
  */
 char *_strcat(char *dest, char *src)
 {
@@ -44,8 +44,8 @@ char *_strcat(char *dest, char *src)
 }
 /**
  * _strchr - Locate Charactere In String
- * @s:String Search In
- * @c:Char To Search For
+ * @s:String Search In (for)
+ * @c:Char To Search For character
  * Return: Pointer To Char*
  */
 char *_strchr(char *s, char c)
@@ -65,9 +65,9 @@ return (s);
  * _strncmp - Compare Amount (n) Of Characters Of Two Strings.
  * @s1: A String.
  * @s2: A String.
- * @n: Amount Of Characters To Compare.
+ * @n: Amount Of Characters To Compare with.
  *
- * Return: 1 If The Strings Don't Match Otherwise 0
+ * Return: 1 If The Strings Don't Match Otherwise return 0
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -86,8 +86,8 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 }
 /**
  * _strdup - Duplicate A String
- * @str:String
- * Return: Duplicate String Failed Null
+ * @str:String str value
+ * Return: Duplicate String Failed and  Null
  */
 char *_strdup(char *str)
 {
