@@ -10,39 +10,39 @@ int i, buffsize = BUFSIZE, rd;
 char c = 0;
 char *buff = malloc(buffsize);
 
-if (buff == NULL)
-{
-free(buff);
-return (NULL);
-}
+	if (buff == NULL)
+	{
+		free(buff);
+		return (NULL);
+	}
 
-for (i = 0; c != EOF && c != '\n'; i++)
-{
-fflush(stdin);
-rd = read(STDIN_FILENO, &c, 1);
-if (rd == 0)
-{
-free(buff);
-exit(EXIT_SUCCESS);
-}
-	buff[i] = c;
-if (buff[0] == '\n')
-{
-free(buff);
-return ("\0");
-}
-if (i >= buffsize)
-{
-buff = _realloc(buff, buffsize, buffsize + 1);
-if (buff == NULL)
-{
-return (NULL);
-}
-}
-}
-buff[i] = '\0';
-hashtag_handle(buff);
-return (buff);
+	for (i = 0; c != EOF && c != '\n'; i++)
+	{
+		fflush(stdin);
+		rd = read(STDIN_FILENO, &c, 1);
+		if (rd == 0)
+		{
+			free(buff);
+			exit(EXIT_SUCCESS);
+		}
+		buff[i] = c;
+		if (buff[0] == '\n')
+		{
+			free(buff);
+			return ("\0");
+		}
+		if (i >= buffsize)
+		{
+			buff = _realloc(buff, buffsize, buffsize + 1);
+			if (buff == NULL)
+			{
+				return (NULL);
+			}
+		}
+	}
+	buff[i] = '\0';
+	hashtag_handle(buff);
+	return (buff);
 }
 
 /**
@@ -52,16 +52,16 @@ return (buff);
  */
 void hashtag_handle(char *buff)
 {
-int i;
+	int i;
 
-for (i = 0; buff[i] != '\0'; i++)
-{
-if (buff[i] == '#')
-{
-buff[i] = '\0';
-break;
-}
-}
+		for (i = 0; buff[i] != '\0'; i++)
+		{
+			if (buff[i] == '#')
+			{
+			buff[i] = '\0';
+			break;
+			}
+	}
 }
 #include "shell.h"
 /**
@@ -71,24 +71,24 @@ break;
  */
 int history(char *input)
 {
-char *filename = ".simple_shell_history";
-ssize_t fd, w;
-int len = 0;
+	char *filename = ".simple_shell_history";
+	ssize_t fd, w;
+	int len = 0;
 
-if (!filename)
-	return (-1);
-fd = open(filename, O_CREAT | O_RDWR | O_APPEND, 00600);
-if (fd < 0)
-	return (-1);
-if (input)
-{
-while (input[len])
-len++;
-w = write(fd, input, len);
-if (w < 0)
-	return (-1);
-}
-return (1);
+	if (!filename)
+		return (-1);
+	fd = open(filename, O_CREAT | O_RDWR | O_APPEND, 00600);
+	if (fd < 0)
+		return (-1);
+	if (input)
+	{
+		while (input[len])
+			len++;
+		w = write(fd, input, len);
+		if (w < 0)
+			return (-1);
+	}
+	return (1);
 }
 /**
  * free_env - Free Enviroment Variable Array
@@ -97,10 +97,11 @@ return (1);
  */
 void free_env(char **env)
 {
-int i;
+	int i;
 
-for (i = 0; env[i]; i++)
-{
-free(env[i]);
+	for (i = 0; env[i]; i++)
+	{
+		free(env[i]);
+	}
 }
-}
+
