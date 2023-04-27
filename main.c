@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
  * main - Simple Shell (Hsh)
- * @argc: Argument Count
- * @argv:Argument Value
- * Return: Exit Value By Status
+ * @argc: Argument Counter
+ * @argv:Argument Values
+ * Return: Exit Value By Statuses
  */
 
 int main(__attribute__((unused)) int argc, char **argv)
