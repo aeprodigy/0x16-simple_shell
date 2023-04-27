@@ -2,8 +2,8 @@
 
 /**
  * path_cmd -  Search In $PATH For Excutable Command
- * @cmd: Parsed Input
- * Return: 1  Failure  0  Success.
+ * @cmd: Parsed Inputs
+ * Return: return 1  Failure  0  Success.
  */
 int path_cmd(char **cmd)
 {
