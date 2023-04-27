@@ -68,8 +68,8 @@ int i, j, n, x;
 }
 /**
  * _puts - print a string
- * @str:pointer char
- * return:void
+ * @str:pointer char (character)
+ * return:void (no return function)
  */
 void _puts(char *str)
 {
@@ -85,10 +85,10 @@ return;
 #include "shell.h"
 
 /**
- * _strcmp - Compare Two String
- * @s1:String 1
- * @s2:String 2
- * Return: 0 If Identical Otherwise How Much Diffrent
+ * _strcmp - Compare The Two Strings
+ * @s1:String 1 (one)
+ * @s2:String 2 (two)
+ * Return: 0 If Identical Otherwise How Much are they Diffrent
  */
 int _strcmp(char *s1, char *s2)
 {
