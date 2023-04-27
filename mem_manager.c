@@ -9,29 +9,29 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *result;
+void *result;
 
-	if (new_size == old_size)
-		return (ptr);
-	if (new_size == 0 && ptr)
-	{
-		free(ptr);
-		return (NULL);
-	}
-	result = malloc(new_size);
-	if (result == NULL)
-		return (NULL);
-	if (ptr == NULL)
-	{
-		fill_an_array(result, '\0', new_size);
-		free(ptr);
-	}
-	else
-	{
-		_memcpy(result, ptr, old_size);
-		free(ptr);
-	}
-	return (result);
+if (new_size == old_size)
+	return (ptr);
+if (new_size == 0 && ptr)
+{
+free(ptr);
+return (NULL);
+}
+result = malloc(new_size);
+if (result == NULL)
+	return (NULL);
+if (ptr == NULL)
+{
+fill_an_array(result, '\0', new_size);
+free(ptr);
+}
+else
+{
+_memcpy(result, ptr, old_size);
+free(ptr);
+}
+return (result);
 
 }
 /**
@@ -42,10 +42,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  */
 void free_all(char **cmd, char *line)
 {
-	free(cmd);
-	free(line);
-	cmd = NULL;
-	line = NULL;
+free(cmd);
+free(line);
+cmd = NULL;
+line = NULL;
 }
 
 /**
@@ -57,13 +57,13 @@ void free_all(char **cmd, char *line)
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+unsigned int i;
 
-	for (i = 0; i < n; i++)
-	{
-		dest[i] = src[i];
-	}
-	return (dest);
+for (i = 0; i < n; i++)
+{
+dest[i] = src[i];
+}
+return (dest);
 }
 /**
  * fill_an_array - Fill An Array By Constant Byte
@@ -74,16 +74,16 @@ char *_memcpy(char *dest, char *src, unsigned int n)
  */
 void *fill_an_array(void *a, int el, unsigned int len)
 {
-	char *p = a;
-	unsigned int i = 0;
+char *p = a;
+unsigned int i = 0;
 
-	while (i < len)
-	{
-		*p = el;
-		p++;
-		i++;
-	}
-	return (a);
+while (i < len)
+{
+*p = el;
+p++;
+i++;
+}
+return (a);
 }
 /**
  * _calloc -  Allocates Memory For An Array, Using Malloc.
@@ -92,18 +92,17 @@ void *fill_an_array(void *a, int el, unsigned int len)
  */
 void *_calloc(unsigned int size)
 {
-	char *a;
-	unsigned int i;
+char *a;
+unsigned int i;
 
-	if (size == 0)
+if (size == 0)
+return (NULL);
+a = malloc(size);
+if (a == NULL)
 	return (NULL);
-	a = malloc(size);
-	if (a == NULL)
-	return (NULL);
-	for (i = 0; i < size; i++)
-	{
-		a[i] = '\0';
-	}
-	return (a);
+for (i = 0; i < size; i++)
+{
+a[i] = '\0';
 }
-
+return (a);
+}

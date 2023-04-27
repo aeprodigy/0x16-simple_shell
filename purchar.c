@@ -9,7 +9,7 @@
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+return (write(1, &c, 1));
 }
 /**
  * print_error - Display Error Based on Command and How Many Time Shell Looped
@@ -20,15 +20,15 @@ int _putchar(char c)
  */
 void print_error(char *input, int counter, char **argv)
 {
-	char *er;
+char *er;
 
-	PRINTER(argv[0]);
-	PRINTER(": ");
-	er = _itoa(counter);
-	PRINTER(er);
-	free(er);
-	PRINTER(": ");
-	PRINTER(input);
-	PRINTER(": not found\n");
+PRINTER(argv[0]);
+PRINTER(": ");
+er = _itoa(counter);
+PRINTER(er);
+free(er);
+PRINTER(": ");
+PRINTER(input);
+PRINTER(": not found\n");
 }
 
