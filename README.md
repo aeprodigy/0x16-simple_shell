@@ -1,6 +1,6 @@
 # ALX Simple Shell Team Project for the alx project.
 
-# Mike Mambwe and  Vanessa Nakayange
+# Mike Mambwe and Vanessa Nakayange
 ## This is the second Dual project: 0x16-simple_shell
     This is an ALX collaboration project on Shell. We were tasked to create a simple shell that mimics the Bash shell. Our shell shall be called hsh
 
