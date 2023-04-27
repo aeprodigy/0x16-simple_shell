@@ -2,7 +2,7 @@
 
 /**
 * _getline - Read The Input By User From Stdin
-* Return: Input
+* Return: Inputs
 */
 char *_getline()
 {
