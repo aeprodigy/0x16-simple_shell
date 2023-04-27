@@ -2,8 +2,8 @@
 /**
  * check_builtin - check builtin
  *
- * @cmd:command to check
- * Return: 0 Succes -1 Fail
+ * @cmd:command to check out the variables
+ * Return: return 0 Succes return -1 Fail
  */
 int check_builtin(char **cmd)
 {
@@ -29,9 +29,9 @@ int check_builtin(char **cmd)
 	return (-1);
 }
 /**
- * creat_envi - Creat Array of Enviroment Variable
- * @envi: Array of Enviroment Variable
- * Return: Void
+ * creat_envi - Creat Array of Enviroment Variables
+ * @envi: Array of Enviroment Variables
+ * Return: Void returned
  */
 void creat_envi(char **envi)
 {
