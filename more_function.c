@@ -2,8 +2,8 @@
 /**
  * check_builtin - check builtin
  *
- * @cmd:command to check
- * Return: 0 Succes -1 Fail
+ * @cmd:command to check command
+ * Return: return if 0 Succes  else return -1 Fail.
  */
 int check_builtin(char **cmd)
 {
