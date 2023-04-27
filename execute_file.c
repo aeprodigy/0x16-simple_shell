@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
  * signal_to_handle - Handle ^C
- * @sig:Captured Signals
- * Return: Void(none returning fun)
+ * @sig:Captured Signal
+ * Return: Void
  */
 void signal_to_handle(int sig)
 {
@@ -14,8 +14,8 @@ void signal_to_handle(int sig)
 /**
  * read_file - Read Command From File
  * @filename:Filename
- * @argv: Name of Program
- * Return: return -1 or  0
+ * @argv:Program Name
+ * Return: -1 or  0
  */
 
 void read_file(char *filename, char **argv)
@@ -44,9 +44,9 @@ void read_file(char *filename, char **argv)
 /**
  * treat_file - PARSE Check Command Fork Wait Excute in Line of File
  * @line: Line From A File
- * @counter:Error Counter var
- * @fp:File Descriptor var
- * @argv:Program Name var
+ * @counter:Error Counter
+ * @fp:File Descriptor
+ * @argv:Program Name
  * Return : Excute A line void
  */
 void treat_file(char *line, int counter, FILE *fp, char **argv)
@@ -73,8 +73,8 @@ void treat_file(char *line, int counter, FILE *fp, char **argv)
 }
 /**
  * exit_bul_for_file - Exit Shell Case Of File
- * @line: Line From A File parsed
- * @cmd: Parsed Command 
+ * @line: Line From A File
+ * @cmd: Parsed Command
  * @fd:File Descriptor
  * Return : Case Of Exit in A File Line
  */
