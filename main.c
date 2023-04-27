@@ -1,47 +1,44 @@
 #include "shell.h"
+
 /**
- * main - Simple Shell (Hsh)
- * @argc: Argument Count
- * @argvl:Argument Value of variable
- * Return: Exit Value By Status
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
+ *
+ * Return: 0 on success, 1 on error
  */
-
-int main(__attribute__((unused)) int argc, char **argvl)
+int main(int ac, char **av)
 {
-	char *line, **toks;
-	int counter = 0, statue = 1, st = 0;
+	info_t info[] = { INFO_INIT };
+	int fd = 2;
 
-	if (argvl[1] != NULL)
-		read_file(argvl[1], argvl);
-	signal(SIGINT, signal_to_handle);
-	while (statue)
+	asm ("mov %1, %0\n\t"
+		"add $3, %0"
+		: "=r" (fd)
+		: "r" (fd));
+
+	if (ac == 2)
 	{
-		counter++;
-		if (isatty(STDIN_FILENO))
-			PRINTER("($) ");
-		line = _getline();
-		if (line[0] == '\0')
+		fd = open(av[1], O_RDONLY);
+		if (fd == -1)
 		{
-			continue;
+			if (errno == EACCES)
+				exit(126);
+			if (errno == ENOENT)
+			{
+				_eputs(av[0]);
+				_eputs(": 0: Can't open ");
+				_eputs(av[1]);
+				_eputchar('\n');
+				_eputchar(BUF_FLUSH);
+				exit(127);
+			}
+			return (EXIT_FAILURE);
 		}
-		history(line);
-		toks = parse_cmd(line);
-		if (_strcmp(toks[0], "exit") == 0)
-		{
-			exit_bul(toks, line, argvl, counter);
-		}
-		else if (check_builtin(toks) == 0)
-		{
-			st = handle_builtin(toks, st);
-			free_all(toks, line);
-			continue;
-		}
-		else
-		{
-			st = check_cmd(toks, line, counter, argvl);
-		}
-		free_all(toks, line);
+		info->readfd = fd;
 	}
-	return (statue);
+	populate_env_list(info);
+	read_history(info);
+	hsh(info, av);
+	return (EXIT_SUCCESS);
 }
-
