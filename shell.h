@@ -1,7 +1,7 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-/**###### environ var ######*/
+/**###### environ variables ######*/
 
 extern char **environ;
 
@@ -11,7 +11,7 @@ extern char **environ;
 #define DELIM " \t\r\n\a"
 #define PRINTER(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
-/**###### LIBS USED ######*/
+/**###### LIBRARIES USED ######*/
 
 #include <stdio.h>
 #include <unistd.h>
@@ -29,7 +29,7 @@ extern char **environ;
 
 
 
-/**###### STRING FUNCTION ######*/
+/**###### STRING FUNCTIONS ######*/
 
 char *_strtok(char *str, const char *tok);
 unsigned int check_delim(char c, const char *str);
@@ -49,7 +49,7 @@ char *_strchr(char *s, char c);
 int _strncmp(const char *s1, const char *s2, size_t n);
 char *_strdup(char *str);
 
-/**###### MEMORIE  MANGMENT ####*/
+/**###### MEMORY MANGMENT ####*/
 
 void free_env(char **env);
 void *fill_an_array(void *a, int el, unsigned int len);
@@ -58,7 +58,7 @@ void *_calloc(unsigned int size);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void free_all(char **input, char *line);
 
-/**###### INPUT Function ######*/
+/**###### INPUT Functions ######*/
 
 void prompt(void);
 void signal_to_handle(int sig);
@@ -78,7 +78,7 @@ int check_cmd(char **tokens, char *line, int count, char **argv);
 void treat_file(char *line, int counter, FILE *fd, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 
-/** ####BUL FUNC #####*/
+/** ####BUL FUNCTIONS #####*/
 
 void hashtag_handle(char *buff);
 int history(char *input);
@@ -99,8 +99,8 @@ void _prerror(char **argv, int c, char **cmd);
 
 /**
  * struct bulltin - contain bultin to handle and function to excute
- * @command:pointer to char
- * @fun:fun to excute when bultin true
+ * @command:pointer to char (character)
+ * @fun:fun to excute when bultin to true
  */
 
 typedef struct  bulltin
