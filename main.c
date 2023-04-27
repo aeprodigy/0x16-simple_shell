@@ -2,17 +2,17 @@
 /**
  * main - Simple Shell (Hsh)
  * @argc: Argument Count
- * @argvl:Argument Value of variable
+ * @argv:Argument Value
  * Return: Exit Value By Status
  */
 
-int main(__attribute__((unused)) int argc, char **argvl)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	char *line, **toks;
 	int counter = 0, statue = 1, st = 0;
 
-	if (argvl[1] != NULL)
-		read_file(argvl[1], argvl);
+	if (argv[1] != NULL)
+		read_file(argv[1], argv);
 	signal(SIGINT, signal_to_handle);
 	while (statue)
 	{
@@ -28,7 +28,7 @@ int main(__attribute__((unused)) int argc, char **argvl)
 		toks = parse_cmd(line);
 		if (_strcmp(toks[0], "exit") == 0)
 		{
-			exit_bul(toks, line, argvl, counter);
+			exit_bul(toks, line, argv, counter);
 		}
 		else if (check_builtin(toks) == 0)
 		{
@@ -38,7 +38,7 @@ int main(__attribute__((unused)) int argc, char **argvl)
 		}
 		else
 		{
-			st = check_cmd(toks, line, counter, argvl);
+			st = check_cmd(toks, line, counter, argv);
 		}
 		free_all(toks, line);
 	}
