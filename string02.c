@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
  * _strcpy - Copie Source To Destination Char
- * @dest:Destination of the cmd
- * @src:Source of the cmd
+ * @dest:Destination
+ * @src:Source
  * Return: Copie Of Char *
  */
 char *_strcpy(char *dest, char *src)
@@ -20,8 +20,8 @@ return (dest);
 }
 /**
  * _strcat - Concat Two String
- * @dest:First String of the file
- * @src:Second String of the file
+ * @dest:First String
+ * @src:Second String
  * Return:First String + Second String Char *
  */
 char *_strcat(char *dest, char *src)
@@ -44,8 +44,8 @@ char *_strcat(char *dest, char *src)
 }
 /**
  * _strchr - Locate Charactere In String
- * @s:String Search In the file
- * @c:Char To Search For the file
+ * @s:String Search In
+ * @c:Char To Search For
  * Return: Pointer To Char*
  */
 char *_strchr(char *s, char c)
@@ -85,8 +85,8 @@ int _strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 /**
- * _strdup - Duplicate A String.
- * @str:String of the file.
+ * _strdup - Duplicate A String
+ * @str:String
  * Return: Duplicate String Failed Null
  */
 char *_strdup(char *str)

@@ -3,7 +3,7 @@
 /**
  * parse_cmd - Parse Line Of Input
  * @input:User Input To Parse
- * Return: Array Of Characters (Parsed) to :Simple Shell
+ * Return: Array Of Char (Parsed):Simple Shell
  */
 char **parse_cmd(char *input)
 {
@@ -33,7 +33,7 @@ char **parse_cmd(char *input)
 #include "shell.h"
 /**
  * print_number -Print Unsigned Int Putchar
- * @n: Unsigned Integer varaible
+ * @n: Unisigned Integer
  * Return: Void
  */
 void print_number(unsigned int n)
@@ -47,7 +47,7 @@ void print_number(unsigned int n)
 }
 /**
  * print_number_in -Print Number Putchar
- * @n:Integer n
+ * @n:Integer
  * Return: void
  */
 void print_number_in(int n)
@@ -66,17 +66,17 @@ void print_number_in(int n)
 }
 /**
  * check_delim - Checks If A Character Match Any Char *
- * @c: Characters To Check
- * @strn: String To Check
+ * @c: Character To Check
+ * @str: String To Check
  * Return: 1 Succes, 0 Failed
  */
-unsigned int check_delim(char c, const char *strn)
+unsigned int check_delim(char c, const char *str)
 {
 	unsigned int i;
 
-	for (i = 0; strn[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (c == strn[i])
+		if (c == str[i])
 			return (1);
 	}
 	return (0);
@@ -84,18 +84,18 @@ unsigned int check_delim(char c, const char *strn)
 
 /**
  * _strtok - Token A String Into Token (strtrok)
- * @strn: String
+ * @str: String
  * @delim: Delimiter
  * Return: Pointer To The Next Token Or NULL
  */
-char *_strtok(char *strn, const char *delim)
+char *_strtok(char *str, const char *delim)
 {
 	static char *ts;
 	static char *nt;
 	unsigned int i;
 
-	if (strn != NULL)
-		nt = strn;
+	if (str != NULL)
+		nt = str;
 	ts = nt;
 	if (ts == NULL)
 		return (NULL);
