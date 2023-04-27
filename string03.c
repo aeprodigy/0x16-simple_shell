@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * _isalpha - Check if Alphabtic
- *@c: Character
- * Return: 1 If True 0 If Not
+ * _isalpha - Check if Alphabtic value
+ *@c: Character value of alpha
+ * Return: return 1 If True return 0 If Not
  */
 int _isalpha(int c)
 {
@@ -16,9 +16,9 @@ return (0);
 }
 }
 /**
- * _itoa - Convert Integer To Char
- * @n: Int To Convert
- * Return: Char Pointer
+ * _itoa - Convert Integer To Char number to a alpha character
+ * @n: Int To Convert num to convert
+ * Return: Char Pointer character pointer
  */
 char *_itoa(unsigned int n)
 {
@@ -43,9 +43,9 @@ char *_itoa(unsigned int n)
 }
 /**
  *  array_rev - Reverse Array
- * @arr:Array To Reverse
- * @len:Length Of Array
- * Return: Void(Reverse Array)
+ * @arr:Array To Reverse to check
+ * @len:Length Of Array of values
+ * Return: Void(Reverse Array) no return
  */
 void array_rev(char *arr, int len)
 {
@@ -61,8 +61,8 @@ void array_rev(char *arr, int len)
 }
 /**
  * intlen - Determine Length Of Int
- * @num: Given Int
- * Return: Length Of Int
+ * @num: Given Int provided value.
+ * Return: Length Of Int integers
  */
 int intlen(int num)
 {
