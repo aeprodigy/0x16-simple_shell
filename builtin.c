@@ -68,5 +68,3 @@ int change_dir(char **cmd, __attribute__((unused))int er)
 	}
 	return (0);
 }
-
-
